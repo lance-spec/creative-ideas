@@ -1,0 +1,49 @@
+{
+  "ideas": [
+    {
+      "id": 1,
+      "category": "💼 Business Ideas",
+      "title": "Subscription Plant Care Service",
+      "description": "Provide monthly plant care packages for busy urban professionals, including fertilizers, care guides, and expert consultations. Let people enjoy green living without worrying about plant death.",
+      "tags": ["Sustainable", "Lifestyle", "Subscription", "Eco-friendly"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 2,
+      "category": "☕ Lifestyle Ideas",
+      "title": "Time Capsule Coffee Shop",
+      "description": "A coffee shop where customers can write letters to their future selves, seal them in the store, and come back to collect them a year later.",
+      "tags": ["Social", "Nostalgia", "Experience Economy", "Emotional Value"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 3,
+      "category": "🚀 Tech Ideas",
+      "title": "AR Virtual Fitting Mirror",
+      "description": "Use augmented reality technology to let customers try on any clothing without undressing. Reduce return rates and enhance shopping experience.",
+      "tags": ["AR Technology", "E-commerce", "Retail Innovation", "SaaS"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 4,
+      "category": "🎨 Art Ideas",
+      "title": "Sound Sculpture Installation",
+      "description": "Create an interactive art installation that transforms city noise into beautiful visual patterns, making people rethink the relationship between sound and space.",
+      "tags": ["Interactive Art", "Urban Planning", "Sensory Experience", "Public Art"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 5,
+      "category": "🎓 Education Ideas",
+      "title": "Virtual History Walk",
+      "description": "Use VR technology to let students travel to historical event sites, experiencing ancient Roman Colosseum, Egyptian pyramid construction, etc.",
+      "tags": ["VR Education", "Immersive Learning", "History Teaching", "EdTech"],
+      "impact": "High",
+      "difficulty": "High"
+    }
+  ]
+} 

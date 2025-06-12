@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Ideas - Get Unlimited Creative Inspiration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .creative-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .button-hover-effect {
+            transition: all 0.3s ease;
+        }
+        .button-hover-effect:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Cool loading animation */
+        .loading-sparkles {
+            animation: sparkle 1.5s infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+        }
+        
+        /* Creative card appearance animation */
+        .idea-appear {
+            animation: ideaAppear 0.8s ease-out;
+        }
+        @keyframes ideaAppear {
+            0% { 
+                opacity: 0; 
+                transform: translateY(50px) scale(0.8); 
+                filter: blur(10px);
+            }
+            60% { 
+                opacity: 0.8; 
+                transform: translateY(-10px) scale(1.05); 
+                filter: blur(2px);
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+                filter: blur(0);
+            }
+        }
+        
+        /* Button pulse effect */
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Rainbow text effect */
+        .rainbow-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #dda0dd);
+            background-size: 400% 400%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s ease-in-out infinite;
+        }
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Floating particle effect */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            50% { transform: translateY(-100px) rotate(180deg); }
+        }
+        
+        /* Heartbeat effect */
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Error message styling */
+        .error-message {
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            animation: shake 0.5s ease-in-out;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-x-hidden">
+    <!-- Background particle effect -->
+    <div id="particles-container" class="fixed inset-0 pointer-events-none z-0"></div>
+    
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 relative z-10">
+        <!-- Header title -->
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold rainbow-text mb-4">
+                ✨ Creative Ideas ✨
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                🎯 Click the button to get <span class="font-bold text-purple-600">random creative inspiration</span> ✨<br>
+                💝 If you like the idea, just pay <span class="font-bold text-green-600">$1</span> to support us creating more
+            </p>
+            <!-- API Status Indicator -->
+            <div id="api-status" class="mt-4 text-sm">
+                <span id="status-indicator" class="inline-block w-3 h-3 bg-gray-400 rounded-full mr-2"></span>
+                <span id="status-text">Connecting to creative database...</span>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="w-full max-w-4xl mx-auto">
+            <div id="initial-view" class="text-center">
+                <div class="relative inline-block">
+                    <!-- Pulse ring effect -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full pulse-ring"></div>
+                    <button id="get-idea-btn" class="relative bg-gradient-to-r from-purple-500 to-blue-500 text-white px-12 py-8 rounded-full text-2xl font-bold shadow-2xl button-hover-effect hover:scale-105 transition-transform z-10">
+                        🧠 Get Creative Inspiration
+                    </button>
+                </div>
+                
+                <p class="text-gray-500 mt-6 text-lg">
+                    🚀 Every click is a new <span class="font-semibold text-indigo-600">journey of inspiration</span>
+                </p>
+                
+                <!-- Motivational copy -->
+                <div class="mt-8 text-center">
+                    <p class="text-sm text-gray-400 italic">
+                        "Creativity changes the world, inspiration creates value" 💫
+                    </p>
+                </div>
+
+                <!-- Error message container -->
+                <div id="error-container" class="hidden"></div>
+            </div>
+
+            <div id="idea-view" class="creative-card rounded-2xl p-8 shadow-xl hidden idea-appear">
+                <div class="text-center mb-6">
+                    <div class="mb-4">
+                        <span id="idea-category" class="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                            Category
+                        </span>
+                    </div>
+                    <h2 id="idea-title" class="text-3xl font-bold text-gray-800 mb-4 leading-tight">
+                        Creative Title
+                    </h2>
+                    <p id="idea-description" class="text-lg text-gray-600 leading-relaxed mb-6">
+                        Creative Description
+                    </p>
+                    <div id="idea-tags" class="flex flex-wrap justify-center gap-2 mb-8">
+                        <!-- Tags will be dynamically inserted -->
+                    </div>
+                </div>
+
+                <!-- Action buttons -->
+                <div id="action-buttons" class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button id="like-btn" class="flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-lg font-medium button-hover-effect hover:scale-105 heartbeat">
+                        ❤️ Love This Idea
+                    </button>
+                    <button id="another-btn" class="flex items-center gap-2 bg-gray-500 text-white px-6 py-3 rounded-lg font-medium button-hover-effect hover:scale-105">
+                        ✨ Get Another One
+                    </button>
+                </div>
+
+                <div id="payment-view" class="text-center hidden">
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6 mb-6">
+                        <p class="text-lg mb-4 text-gray-700">
+                            🎉 <span class="font-bold">Thank you for loving this idea!</span> 💝<br>
+                            Pay <span class="font-bold text-green-600">$1</span> to support us creating more amazing creative content
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Your support directly helps us develop more valuable creative content 🌟
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                        <button id="pay-btn" class="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-lg font-medium button-hover-effect hover:scale-105">
+                            💳 Pay $1
+                        </button>
+                        <button id="back-btn" class="flex items-center gap-2 bg-gray-400 text-white px-6 py-3 rounded-lg font-medium button-hover-effect hover:scale-105">
+                            🔙 Back
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom description -->
+        <div class="mt-16 text-center text-gray-500 max-w-2xl mx-auto">
+            <p class="mb-2 font-semibold">
+                💡 Get inspired by <span class="text-indigo-600">unlimited creative ideas</span> - Pay only for what you love
+            </p>
+            <div class="text-xs space-y-1">
+                <p>🌟 Every payment supports our mission to provide valuable creative inspiration</p>
+                <p>✨ New ideas added regularly to keep creativity flowing</p>
+            </div>
+        </div>
+
+        <!-- Legal Footer -->
+        <div class="mt-12 text-center text-xs text-gray-400 max-w-4xl mx-auto">
+            <div class="flex flex-wrap justify-center gap-4 mb-4">
+                <button onclick="showModal('privacy')" class="hover:text-gray-600 transition-colors">Privacy Policy</button>
+                <button onclick="showModal('terms')" class="hover:text-gray-600 transition-colors">Terms of Service</button>
+                <button onclick="showModal('cookies')" class="hover:text-gray-600 transition-colors">Cookie Policy</button>
+                <button onclick="showModal('gdpr')" class="hover:text-gray-600 transition-colors">GDPR Compliance</button>
+            </div>
+            <p>© 2025 Creative Ideas. Inspiring innovation worldwide. 🌍</p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-xl max-w-2xl max-h-96 overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 id="modal-title" class="text-xl font-bold"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+            <div id="modal-content" class="text-gray-600"></div>
+        </div>
+    </div>
+
+    <script>
+        // API Configuration
+        const API_BASE_URL = 'http://localhost:3001';
+        
+        // DOM elements
+        const initialView = document.getElementById('initial-view');
+        const ideaView = document.getElementById('idea-view');
+        const paymentView = document.getElementById('payment-view');
+        const actionButtons = document.getElementById('action-buttons');
+        const getIdeaBtn = document.getElementById('get-idea-btn');
+        const likeBtn = document.getElementById('like-btn');
+        const anotherBtn = document.getElementById('another-btn');
+        const payBtn = document.getElementById('pay-btn');
+        const backBtn = document.getElementById('back-btn');
+        const errorContainer = document.getElementById('error-container');
+        const statusIndicator = document.getElementById('status-indicator');
+        const statusText = document.getElementById('status-text');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            checkAPIStatus();
+        });
+
+        // Check API status
+        async function checkAPIStatus() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health`);
+                if (response.ok) {
+                    const data = await response.json();
+                    statusIndicator.className = 'inline-block w-3 h-3 bg-green-400 rounded-full mr-2';
+                    statusText.textContent = `Connected! ${data.totalIdeas} creative ideas available 🎯`;
+                } else {
+                    throw new Error('API not responding');
+                }
+            } catch (error) {
+                statusIndicator.className = 'inline-block w-3 h-3 bg-red-400 rounded-full mr-2';
+                statusText.textContent = 'API unavailable - Please start the backend server 🔧';
+                getIdeaBtn.disabled = true;
+                getIdeaBtn.style.opacity = '0.5';
+            }
+        }
+
+        // Create background particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const colors = ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe'];
+            
+            setInterval(() => {
+                if (container.children.length < 20) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.width = Math.random() * 10 + 5 + 'px';
+                    particle.style.height = particle.style.width;
+                    particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.animationDelay = Math.random() * 2 + 's';
+                    particle.style.opacity = '0.3';
+                    container.appendChild(particle);
+                    
+                    setTimeout(() => {
+                        if (particle.parentNode) {
+                            particle.parentNode.removeChild(particle);
+                        }
+                    }, 6000);
+                }
+            }, 300);
+        }
+
+        // Show error message
+        function showError(message) {
+            errorContainer.innerHTML = `
+                <div class="error-message">
+                    <strong>⚠️ Error:</strong> ${message}
+                    <br><small>Please make sure the backend server is running on port 3001</small>
+                </div>
+            `;
+            errorContainer.classList.remove('hidden');
+            
+            setTimeout(() => {
+                errorContainer.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Get random idea from API
+        async function fetchRandomIdea() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/random-idea`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                if (data.success) {
+                    return data.idea;
+                } else {
+                    throw new Error(data.error || 'Unknown error');
+                }
+            } catch (error) {
+                console.error('Failed to fetch idea:', error);
+                throw error;
+            }
+        }
+
+        // Show creative idea
+        async function showIdea() {
+            if (getIdeaBtn.disabled) return;
+            
+            // Super cool loading effect
+            getIdeaBtn.innerHTML = '✨ Summoning creative spirits...';
+            getIdeaBtn.disabled = true;
+            getIdeaBtn.classList.add('loading-sparkles');
+            
+            // Create loading text cycle
+            const loadingTexts = [
+                '🧙‍♂️ Summoning creative spirits...',
+                '🔮 Unlocking inspiration vault...',
+                '⚡ Activating creative wavelengths...',
+                '🌟 Collecting cosmic wisdom...',
+                '🎭 Weaving creative magic...'
+            ];
+            
+            let textIndex = 0;
+            const textInterval = setInterval(() => {
+                textIndex = (textIndex + 1) % loadingTexts.length;
+                getIdeaBtn.innerHTML = loadingTexts[textIndex];
+            }, 400);
+            
+            try {
+                // Fetch idea from API
+                const idea = await fetchRandomIdea();
+                
+                setTimeout(() => {
+                    clearInterval(textInterval);
+                    
+                    // Update content
+                    document.getElementById('idea-category').textContent = idea.category;
+                    document.getElementById('idea-title').textContent = idea.title;
+                    document.getElementById('idea-description').textContent = idea.description;
+                    
+                    // Update tags
+                    const tagsContainer = document.getElementById('idea-tags');
+                    tagsContainer.innerHTML = '';
+                    idea.tags.forEach(tag => {
+                        const tagElement = document.createElement('span');
+                        tagElement.className = 'bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm mr-2 mb-2 inline-block';
+                        tagElement.textContent = `#${tag}`;
+                        tagsContainer.appendChild(tagElement);
+                    });
+                    
+                    // Add impact and difficulty indicators
+                    const metricsDiv = document.createElement('div');
+                    metricsDiv.className = 'flex justify-center gap-4 mt-4 text-sm';
+                    metricsDiv.innerHTML = `
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded">
+                            📈 Impact: ${idea.impact}
+                        </span>
+                        <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded">
+                            🎯 Difficulty: ${idea.difficulty}
+                        </span>
+                    `;
+                    tagsContainer.appendChild(metricsDiv);
+                    
+                    // Switch views
+                    initialView.classList.add('hidden');
+                    ideaView.classList.remove('hidden');
+                    ideaView.classList.add('idea-appear');
+                    paymentView.classList.add('hidden');
+                    actionButtons.classList.remove('hidden');
+                    
+                    // Reset button
+                    getIdeaBtn.innerHTML = '🧠 Get Creative Inspiration';
+                    getIdeaBtn.disabled = false;
+                    getIdeaBtn.classList.remove('loading-sparkles');
+                    
+                    // Play success notification sound
+                    playNotificationSound();
+                    
+                }, 2000);
+                
+            } catch (error) {
+                clearInterval(textInterval);
+                
+                // Handle error
+                showError('Failed to fetch creative idea. Please check your internet connection and try again.');
+                
+                // Reset button
+                getIdeaBtn.innerHTML = '🧠 Get Creative Inspiration';
+                getIdeaBtn.disabled = false;
+                getIdeaBtn.classList.remove('loading-sparkles');
+            }
+        }
+
+        // Play notification sound
+        function playNotificationSound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+                gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.2);
+            } catch (e) {
+                // If sound cannot be played, handle silently
+            }
+        }
+
+        // Show payment interface
+        function showPayment() {
+            actionButtons.classList.add('hidden');
+            paymentView.classList.remove('hidden');
+        }
+
+        // Return to initial interface
+        function backToInitial() {
+            ideaView.classList.add('hidden');
+            initialView.classList.remove('hidden');
+        }
+
+        // Payment processing
+        function handlePayment() {
+            alert('🎉 Thank you for your support! 💝\n\n✨ Payment functionality is under development, please stay tuned.\n\n🚀 Your support will help us create more amazing creative content!\n\n📧 We will notify you via email when payment functionality goes live.');
+        }
+
+        // Modal functionality
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const modalData = {
+                privacy: {
+                    title: 'Privacy Policy',
+                    content: `
+                        <h4 class="font-semibold mb-2">How We Protect Your Privacy</h4>
+                        <p class="mb-3">We take your privacy rights very seriously. This privacy policy explains how we collect, use, and protect your personal information.</p>
+                        
+                        <h5 class="font-medium mb-2">Information Collection</h5>
+                        <p class="mb-3">• We only collect information you voluntarily provide<br>• We do not collect sensitive personal information<br>• We use cookies to enhance user experience</p>
+                        
+                        <h5 class="font-medium mb-2">Information Use</h5>
+                        <p class="mb-3">• Provide and improve our services<br>• Process payments and transactions<br>• Send service-related notifications</p>
+                        
+                        <h5 class="font-medium mb-2">Information Protection</h5>
+                        <p>• Use industry-standard security measures<br>• Regularly update security protocols<br>• Limit employee access permissions</p>
+                    `
+                },
+                terms: {
+                    title: 'Terms of Service',
+                    content: `
+                        <h4 class="font-semibold mb-2">Terms and Conditions of Use</h4>
+                        <p class="mb-3">Welcome to Creative Ideas! By using our service, you agree to comply with the following terms.</p>
+                        
+                        <h5 class="font-medium mb-2">Service Content</h5>
+                        <p class="mb-3">• We provide creative inspiration and ideas<br>• Content is for reference and inspiration only<br>• We do not guarantee commercial success of ideas</p>
+                        
+                        <h5 class="font-medium mb-2">User Responsibilities</h5>
+                        <p class="mb-3">• Use our service legally<br>• Respect intellectual property rights<br>• Do not misuse the platform maliciously</p>
+                        
+                        <h5 class="font-medium mb-2">Disclaimer</h5>
+                        <p>• Service provided "as is"<br>• Not liable for losses<br>• Reserve right to modify services</p>
+                    `
+                },
+                cookies: {
+                    title: 'Cookie Policy',
+                    content: `
+                        <h4 class="font-semibold mb-2">Cookie Usage Explanation</h4>
+                        <p class="mb-3">We use cookies to improve your browsing experience.</p>
+                        
+                        <h5 class="font-medium mb-2">Types of Cookies</h5>
+                        <p class="mb-3">• <strong>Essential Cookies:</strong> Ensure website functions properly<br>• <strong>Analytics Cookies:</strong> Help us understand user behavior<br>• <strong>Functional Cookies:</strong> Remember your preference settings</p>
+                        
+                        <h5 class="font-medium mb-2">Managing Cookies</h5>
+                        <p class="mb-3">• You can manage cookies through browser settings<br>• Disabling cookies may affect website functionality<br>• We do not use third-party tracking cookies</p>
+                        
+                        <h5 class="font-medium mb-2">Cookie Validity Period</h5>
+                        <p>• Session cookies: Deleted when browser closes<br>• Persistent cookies: Saved for 1 year<br>• You can clear cookies at any time</p>
+                    `
+                },
+                gdpr: {
+                    title: 'GDPR Compliance Statement',
+                    content: `
+                        <h4 class="font-semibold mb-2">EU General Data Protection Regulation Compliance</h4>
+                        <p class="mb-3">We fully comply with GDPR regulations and protect EU users' data rights.</p>
+                        
+                        <h5 class="font-medium mb-2">Your Rights</h5>
+                        <p class="mb-3">• <strong>Right of Access:</strong> View data we held about you<br>• <strong>Right of Rectification:</strong> Correct inaccurate personal information<br>• <strong>Right to Erasure:</strong> Request deletion of your personal data<br>• <strong>Right to Portability:</strong> Obtain a copy of your data</p>
+                        
+                        <h5 class="font-medium mb-2">Legal Basis</h5>
+                        <p class="mb-3">• Fulfilling contractual obligations<br>• Legitimate interests<br>• Your explicit consent</p>
+                        
+                        <h5 class="font-medium mb-2">Contact Us</h5>
+                        <p>To exercise your rights, please contact:<br>📧 privacy@creativeideas.com<br>📍 Data Protection Officer</p>
+                    `
+                }
+            };
+            
+            title.textContent = modalData[type].title;
+            content.innerHTML = modalData[type].content;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+        }
+
+        // Event listeners
+        getIdeaBtn.addEventListener('click', showIdea);
+        likeBtn.addEventListener('click', showPayment);
+        anotherBtn.addEventListener('click', showIdea);
+        payBtn.addEventListener('click', handlePayment);
+        backBtn.addEventListener('click', () => {
+            paymentView.classList.add('hidden');
+            actionButtons.classList.remove('hidden');
+        });
+
+        // Refresh API status every 30 seconds
+        setInterval(checkAPIStatus, 30000);
+    </script>
+</body>
+</html>

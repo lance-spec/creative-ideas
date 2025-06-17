@@ -521,11 +521,31 @@
                 
                 // Fallback to local JSON file (for Vercel deployment)
                 console.log('Loading from JSON file...');
-                const response = await fetch('./creative-ideas.json');
-                console.log('JSON fetch response status:', response.status);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // Try multiple possible paths for the JSON file
+                const possiblePaths = [
+                    './creative-ideas.json',
+                    '/creative-ideas.json',
+                    'creative-ideas.json'
+                ];
+                
+                let response = null;
+                for (const path of possiblePaths) {
+                    try {
+                        console.log('Trying path:', path);
+                        response = await fetch(path);
+                        if (response.ok) {
+                            console.log('Successfully loaded from:', path);
+                            break;
+                        }
+                    } catch (e) {
+                        console.log('Failed to load from:', path, e.message);
+                    }
                 }
+                
+                if (!response || !response.ok) {
+                    throw new Error(`Failed to load JSON from any path. Last status: ${response?.status}`);
+                }
+                console.log('JSON fetch response status:', response.status);
                 const data = await response.json();
                 console.log('JSON loaded successfully, ideas count:', data.ideas.length);
                 

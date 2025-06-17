@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+Allow: /api/
+Allow: /images/
+
+# 优先爬取重要页面
+Crawl-delay: 1
+
+# 网站地图位置
+Sitemap: https://creative-ideas.com/sitemap.xml
+
+# 禁止爬取的目录（如果有）
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# 允许主要搜索引擎
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# 阻止恶意爬虫
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: / 

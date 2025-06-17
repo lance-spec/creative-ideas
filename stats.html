@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Creative Ideas Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
+                📊 Analytics Dashboard
+            </h1>
+            <p class="text-gray-600">Creative Ideas Generator - User Behavior Analytics</p>
+            <div class="flex items-center justify-center mt-4">
+                <div class="pulse-dot w-3 h-3 bg-green-400 rounded-full mr-2"></div>
+                <span class="text-sm text-gray-500">Live tracking active</span>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-8">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-purple-600"></div>
+            <p class="mt-2 text-gray-600">Loading analytics data...</p>
+        </div>
+
+        <!-- Main Stats Grid -->
+        <div id="stats-container" class="hidden">
+            <!-- Overall Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="stat-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Page Views</p>
+                            <p id="pageViews" class="text-2xl font-bold text-blue-600">0</p>
+                        </div>
+                        <div class="bg-blue-100 p-3 rounded-full">
+                            <span class="text-2xl">👀</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Get Inspiration</p>
+                            <p id="getInspiration" class="text-2xl font-bold text-purple-600">0</p>
+                        </div>
+                        <div class="bg-purple-100 p-3 rounded-full">
+                            <span class="text-2xl">🧠</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <span id="inspirationRate" class="text-xs text-green-600 font-medium">0%</span>
+                        <span class="text-xs text-gray-500"> conversion</span>
+                    </div>
+                </div>
+
+                <div class="stat-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Love Idea</p>
+                            <p id="loveIdea" class="text-2xl font-bold text-red-600">0</p>
+                        </div>
+                        <div class="bg-red-100 p-3 rounded-full">
+                            <span class="text-2xl">❤️</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <span id="loveRate" class="text-xs text-green-600 font-medium">0%</span>
+                        <span class="text-xs text-gray-500"> from inspiration</span>
+                    </div>
+                </div>
+
+                <div class="stat-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Click Pay</p>
+                            <p id="clickPay" class="text-2xl font-bold text-green-600">0</p>
+                        </div>
+                        <div class="bg-green-100 p-3 rounded-full">
+                            <span class="text-2xl">💳</span>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <span id="payRate" class="text-xs text-green-600 font-medium">0%</span>
+                        <span class="text-xs text-gray-500"> from love</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversion Funnel -->
+            <div class="stat-card p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">🔄 Conversion Funnel</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <div class="w-16 text-sm text-gray-600">Visits</div>
+                        <div class="flex-1 bg-gray-200 rounded-full h-4 mr-4">
+                            <div class="bg-blue-500 h-4 rounded-full" style="width: 100%"></div>
+                        </div>
+                        <div id="funnel-pageViews" class="w-16 text-sm font-medium">0</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-16 text-sm text-gray-600">Inspire</div>
+                        <div class="flex-1 bg-gray-200 rounded-full h-4 mr-2">
+                            <div id="funnel-inspire-bar" class="bg-purple-500 h-4 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <div id="funnel-getInspiration" class="w-12 text-sm font-medium">0</div>
+                        <div id="funnel-inspire-rate" class="w-12 text-xs text-gray-500">0%</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-16 text-sm text-gray-600">Love</div>
+                        <div class="flex-1 bg-gray-200 rounded-full h-4 mr-2">
+                            <div id="funnel-love-bar" class="bg-red-500 h-4 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <div id="funnel-loveIdea" class="w-12 text-sm font-medium">0</div>
+                        <div id="funnel-love-rate" class="w-12 text-xs text-gray-500">0%</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-16 text-sm text-gray-600">Pay</div>
+                        <div class="flex-1 bg-gray-200 rounded-full h-4 mr-2">
+                            <div id="funnel-pay-bar" class="bg-green-500 h-4 rounded-full" style="width: 0%"></div>
+                        </div>
+                        <div id="funnel-clickPay" class="w-12 text-sm font-medium">0</div>
+                        <div id="funnel-pay-rate" class="w-12 text-xs text-gray-500">0%</div>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <span class="text-sm text-gray-600">Overall Conversion Rate: </span>
+                    <span id="overallRate" class="font-bold text-green-600">0%</span>
+                </div>
+                <div id="high-conversion-notice" class="mt-2 text-center text-xs text-orange-600 hidden">
+                    ⚠️ Note: Some conversion rates exceed 100% due to repeated user actions
+                </div>
+            </div>
+
+            <!-- Period Info -->
+            <div class="stat-card p-6 rounded-xl shadow-lg mb-8">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">📅 Tracking Period</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div>
+                        <span class="text-gray-600">Start Date:</span>
+                        <span id="startDate" class="font-medium ml-2">-</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-600">Last Updated:</span>
+                        <span id="lastUpdated" class="font-medium ml-2">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Refresh Button -->
+        <div class="text-center">
+            <button id="refreshBtn" onclick="loadStats()" 
+                    class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg font-medium hover:scale-105 transition-transform shadow-lg">
+                🔄 Refresh Data
+            </button>
+            <div class="mt-4">
+                <a href="/" class="text-blue-600 hover:text-blue-800 text-sm">← Back to Creative Ideas Generator</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:3001';
+
+        async function loadStats() {
+            try {
+                const loadingEl = document.getElementById('loading');
+                const containerEl = document.getElementById('stats-container');
+                
+                loadingEl.classList.remove('hidden');
+                containerEl.classList.add('hidden');
+
+                const response = await fetch(`${API_BASE_URL}/api/stats`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                updateStatsDisplay(data);
+
+                loadingEl.classList.add('hidden');
+                containerEl.classList.remove('hidden');
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-red-600">Failed to load analytics data</p>
+                        <button onclick="loadStats()" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">Retry</button>
+                    </div>
+                `;
+            }
+        }
+
+        function updateStatsDisplay(data) {
+            const { totalStats, conversionRates, period } = data;
+
+            // Update main stats
+            document.getElementById('pageViews').textContent = totalStats.pageViews;
+            document.getElementById('getInspiration').textContent = totalStats.getInspiration;
+            document.getElementById('loveIdea').textContent = totalStats.loveIdea;
+            document.getElementById('clickPay').textContent = totalStats.clickPay;
+
+            // Update conversion rates
+            document.getElementById('inspirationRate').textContent = conversionRates.inspirationRate + '%';
+            document.getElementById('loveRate').textContent = conversionRates.loveRate + '%';
+            document.getElementById('payRate').textContent = conversionRates.payRate + '%';
+            document.getElementById('overallRate').textContent = conversionRates.overallRate + '%';
+
+            // Update funnel
+            document.getElementById('funnel-pageViews').textContent = totalStats.pageViews;
+            document.getElementById('funnel-getInspiration').textContent = totalStats.getInspiration;
+            document.getElementById('funnel-loveIdea').textContent = totalStats.loveIdea;
+            document.getElementById('funnel-clickPay').textContent = totalStats.clickPay;
+
+            // Update funnel bars (ensure bars don't exceed 100%)
+            const maxValue = Math.max(totalStats.pageViews, totalStats.getInspiration, totalStats.loveIdea, totalStats.clickPay, 1);
+            document.getElementById('funnel-inspire-bar').style.width = Math.min((totalStats.getInspiration / maxValue * 100), 100) + '%';
+            document.getElementById('funnel-love-bar').style.width = Math.min((totalStats.loveIdea / maxValue * 100), 100) + '%';
+            document.getElementById('funnel-pay-bar').style.width = Math.min((totalStats.clickPay / maxValue * 100), 100) + '%';
+
+            // Update funnel conversion rates
+            document.getElementById('funnel-inspire-rate').textContent = conversionRates.inspirationRate + '%';
+            document.getElementById('funnel-love-rate').textContent = conversionRates.loveRate + '%';
+            document.getElementById('funnel-pay-rate').textContent = conversionRates.payRate + '%';
+
+            // Show notice if any conversion rate exceeds 100%
+            const hasHighConversion = parseFloat(conversionRates.inspirationRate) > 100 || 
+                                    parseFloat(conversionRates.loveRate) > 100 || 
+                                    parseFloat(conversionRates.payRate) > 100;
+            
+            const noticeEl = document.getElementById('high-conversion-notice');
+            if (hasHighConversion) {
+                noticeEl.classList.remove('hidden');
+            } else {
+                noticeEl.classList.add('hidden');
+            }
+
+            // Update period info
+            if (period.startDate) {
+                document.getElementById('startDate').textContent = new Date(period.startDate).toLocaleDateString();
+            }
+            if (period.lastUpdated) {
+                document.getElementById('lastUpdated').textContent = new Date(period.lastUpdated).toLocaleString();
+            }
+        }
+
+        // Load stats on page load
+        document.addEventListener('DOMContentLoaded', loadStats);
+
+        // Auto refresh every 30 seconds
+        setInterval(loadStats, 30000);
+    </script>
+</body>
+</html> 

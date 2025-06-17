@@ -1,0 +1,95 @@
+{
+    "name": "Creative Ideas Generator - Unlimited Innovation Platform",
+    "short_name": "Creative Ideas",
+    "description": "Get unlimited creative inspiration and ideas! Covering business concepts, tech innovations, artistic inspiration, and educational solutions.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#667eea",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en-US",
+    "dir": "ltr",
+    "categories": ["productivity", "education", "business"],
+    "icons": [
+        {
+            "src": "/images/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-128x128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-152x152.png",
+            "sizes": "152x152",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/images/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Get Creative Ideas",
+            "short_name": "New Idea",
+            "description": "Quickly generate a new creative inspiration",
+            "url": "/?action=get-idea",
+            "icons": [
+                {
+                    "src": "/images/shortcut-idea.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Browse Idea History",
+            "short_name": "History",
+            "description": "View previously generated creative ideas",
+            "url": "/?action=history",
+            "icons": [
+                {
+                    "src": "/images/shortcut-history.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
+} 

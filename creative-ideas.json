@@ -44,6 +44,861 @@
       "tags": ["VR Education", "Immersive Learning", "History Teaching", "EdTech"],
       "impact": "High",
       "difficulty": "High"
+    },
+    {
+      "id": 6,
+      "category": "💼 Business Ideas",
+      "title": "Pet Concierge Service",
+      "description": "On-demand premium pet care including grooming, walking, vet visits, and emergency services. GPS tracking and live updates for pet parents.",
+      "tags": ["Pet Care", "On-demand", "Mobile App", "Service Economy"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 7,
+      "category": "🚀 Tech Ideas",
+      "title": "AI-Powered Meal Planning",
+      "description": "AI analyzes your health data, dietary preferences, and local ingredient availability to create personalized weekly meal plans and grocery lists.",
+      "tags": ["AI", "Health Tech", "Nutrition", "Personalization"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 8,
+      "category": "🌱 Sustainability",
+      "title": "Upcycled Fashion Marketplace",
+      "description": "Platform connecting fashion designers with textile waste from manufacturers to create unique upcycled clothing pieces.",
+      "tags": ["Circular Economy", "Fashion", "Waste Reduction", "Marketplace"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 9,
+      "category": "🏥 Health & Wellness",
+      "title": "Sleep Optimization Pod",
+      "description": "Smart sleep environment that adjusts temperature, humidity, lighting, and sound based on your sleep stages to maximize rest quality.",
+      "tags": ["Sleep Tech", "IoT", "Wellness", "Biometric Monitoring"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 10,
+      "category": "🎮 Entertainment",
+      "title": "Escape Room at Home Kit",
+      "description": "Monthly subscription boxes containing everything needed to create immersive escape room experiences in your living room.",
+      "tags": ["Board Games", "Subscription", "Social Gaming", "DIY"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 11,
+      "category": "💼 Business Ideas",
+      "title": "Micro-Investment Coffee Shops",
+      "description": "Coffee shops where customers can invest spare change into local startups while enjoying their morning coffee. Displays show portfolio performance.",
+      "tags": ["Fintech", "Community Investment", "Micro-investing", "Social Impact"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 12,
+      "category": "🚀 Tech Ideas",
+      "title": "Language Exchange VR Platform",
+      "description": "Virtual reality environments where people practice languages through immersive scenarios like ordering food in Paris or negotiating in Tokyo.",
+      "tags": ["VR", "Language Learning", "Cultural Exchange", "EdTech"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 13,
+      "category": "🏠 Home & Living",
+      "title": "Modular Furniture Rental",
+      "description": "Rent high-quality modular furniture that adapts to life changes. Moving? Reconfigure. Hosting guests? Add modules. No storage needed.",
+      "tags": ["Furniture", "Subscription", "Minimalism", "Flexibility"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 14,
+      "category": "🌍 Social Impact",
+      "title": "Skill Bartering Network",
+      "description": "Platform where people trade skills instead of money. Graphic designers get accounting help in exchange for logo design.",
+      "tags": ["Skill Sharing", "Community", "Alternative Economy", "Networking"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 15,
+      "category": "🎨 Art Ideas",
+      "title": "Emotional Color Therapy Rooms",
+      "description": "Spaces that use dynamic lighting and color psychology to help people process emotions and reduce stress through visual therapy.",
+      "tags": ["Color Therapy", "Mental Health", "Interior Design", "Wellness"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 16,
+      "category": "🍔 Food & Dining",
+      "title": "Ghost Kitchen Network",
+      "description": "Shared commercial kitchens optimized for delivery-only restaurants, reducing overhead costs and enabling culinary experimentation.",
+      "tags": ["Food Tech", "Delivery", "Shared Economy", "Restaurant Innovation"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 17,
+      "category": "🚗 Transportation",
+      "title": "Bike Parking Security Pods",
+      "description": "Automated secure bike storage units in urban areas with app-based access, charging stations, and maintenance services.",
+      "tags": ["Urban Mobility", "IoT", "Security", "Bike Sharing"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 18,
+      "category": "🎓 Education Ideas",
+      "title": "Micro-Learning Commute App",
+      "description": "Learn new skills during daily commutes through bite-sized lessons optimized for your exact travel time and preferred learning style.",
+      "tags": ["Mobile Learning", "Time Optimization", "Productivity", "Personalization"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 19,
+      "category": "🏥 Health & Wellness",
+      "title": "Mental Health Check-in Mirrors",
+      "description": "Smart mirrors that use facial analysis and voice patterns to suggest wellness activities and connect users with mental health resources.",
+      "tags": ["Mental Health", "AI", "Early Detection", "Self-Care"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 20,
+      "category": "💼 Business Ideas",
+      "title": "Corporate Meditation Pods",
+      "description": "Rent soundproof meditation pods to offices, complete with guided sessions, ambient lighting, and stress monitoring for employee wellness.",
+      "tags": ["Corporate Wellness", "Meditation", "Stress Management", "B2B"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 21,
+      "category": "🌱 Sustainability",
+      "title": "Carbon Footprint Dating App",
+      "description": "Dating app that matches people based on environmental values and helps couples plan low-impact dates and track shared carbon goals.",
+      "tags": ["Dating", "Environmental", "Social Impact", "Gamification"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 22,
+      "category": "🚀 Tech Ideas",
+      "title": "Voice-Controlled Smart Garden",
+      "description": "Indoor hydroponic system controlled by voice commands that grows fresh herbs and vegetables with AI-optimized growing conditions.",
+      "tags": ["IoT", "Smart Home", "Urban Farming", "Voice Interface"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 23,
+      "category": "🎮 Entertainment",
+      "title": "Nostalgic Gaming Café",
+      "description": "Café featuring classic arcade games and retro consoles where customers pay by time spent playing rather than per game.",
+      "tags": ["Retro Gaming", "Social Space", "Nostalgia", "Time-based Pricing"],
+      "impact": "Low",
+      "difficulty": "Low"
+    },
+    {
+      "id": 24,
+      "category": "🏠 Home & Living",
+      "title": "Smart Home Energy Trading",
+      "description": "Platform allowing homes with solar panels to automatically trade excess energy with neighbors based on real-time demand and pricing.",
+      "tags": ["Energy Trading", "Smart Grid", "Renewable Energy", "Blockchain"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 25,
+      "category": "🎨 Art Ideas",
+      "title": "Collaborative Digital Murals",
+      "description": "Large digital displays in public spaces where passersby can add to evolving art pieces using their smartphones.",
+      "tags": ["Digital Art", "Community Participation", "Public Installation", "Mobile Interaction"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 26,
+      "category": "💼 Business Ideas",
+      "title": "Senior Tech Tutoring Service",
+      "description": "In-home technology tutoring specifically designed for seniors, helping them navigate smartphones, video calls, and digital services.",
+      "tags": ["Senior Care", "Digital Literacy", "Education", "In-home Service"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 27,
+      "category": "🍔 Food & Dining",
+      "title": "Foraged Food Restaurant",
+      "description": "Restaurant featuring hyper-local cuisine made from foraged ingredients, changing menu based on seasonal availability and local ecosystems.",
+      "tags": ["Foraging", "Sustainable Dining", "Local Sourcing", "Seasonal Menu"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 28,
+      "category": "🚗 Transportation",
+      "title": "Cargo Bike Delivery Network",
+      "description": "Last-mile delivery service using electric cargo bikes for urban areas, reducing traffic congestion and emissions.",
+      "tags": ["Sustainable Delivery", "Urban Logistics", "Electric Bikes", "Last-mile"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 29,
+      "category": "🎓 Education Ideas",
+      "title": "Skill-Swap University",
+      "description": "Online platform where professionals teach their expertise in exchange for learning other skills, creating a circular knowledge economy.",
+      "tags": ["Skill Exchange", "Peer Learning", "Professional Development", "Community"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 30,
+      "category": "🏥 Health & Wellness",
+      "title": "Prescription Exercise Programs",
+      "description": "Personalized fitness programs prescribed by doctors and monitored by certified trainers for specific health conditions.",
+      "tags": ["Medical Fitness", "Preventive Care", "Personalized Health", "Doctor Integration"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 31,
+      "category": "🌍 Social Impact",
+      "title": "Community Tool Library",
+      "description": "Neighborhood libraries where residents can borrow tools, equipment, and appliances instead of buying items used infrequently.",
+      "tags": ["Sharing Economy", "Community Resources", "Waste Reduction", "Local Initiative"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 32,
+      "category": "🚀 Tech Ideas",
+      "title": "AI Personal Shopping Assistant",
+      "description": "AI that learns your style preferences, budget, and lifestyle to suggest and purchase clothing, groceries, and household items automatically.",
+      "tags": ["AI", "Personal Assistant", "E-commerce", "Automation"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 33,
+      "category": "🎮 Entertainment",
+      "title": "Interactive Story Walks",
+      "description": "GPS-based storytelling app that creates immersive narratives based on your walking route, turning daily walks into adventures.",
+      "tags": ["Location-based Gaming", "Storytelling", "Fitness", "Augmented Reality"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 34,
+      "category": "💼 Business Ideas",
+      "title": "Pop-up Office Spaces",
+      "description": "Mobile office pods that can be deployed anywhere for remote workers needing temporary professional workspace with high-speed internet.",
+      "tags": ["Remote Work", "Flexible Workspace", "Mobile Office", "Productivity"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 35,
+      "category": "🌱 Sustainability",
+      "title": "Plastic-to-Fuel Micro-plants",
+      "description": "Small-scale facilities that convert plastic waste into fuel for local communities, creating circular waste management systems.",
+      "tags": ["Waste Management", "Renewable Energy", "Circular Economy", "Community Solutions"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 36,
+      "category": "🏠 Home & Living",
+      "title": "Scent-Memory Home System",
+      "description": "Smart home system that releases specific scents to trigger positive memories and emotions based on calendar events and personal preferences.",
+      "tags": ["Smart Home", "Aromatherapy", "Memory Enhancement", "Emotional Wellness"],
+      "impact": "Low",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 37,
+      "category": "🎨 Art Ideas",
+      "title": "Emotion-Responsive Architecture",
+      "description": "Buildings that change color, temperature, and acoustics based on the collective emotional state of occupants using biometric sensors.",
+      "tags": ["Responsive Architecture", "Biometrics", "Emotional Design", "Smart Buildings"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 38,
+      "category": "🍔 Food & Dining",
+      "title": "Molecular Gastronomy Food Truck",
+      "description": "Mobile fine dining experience bringing molecular gastronomy techniques to street food, making haute cuisine accessible.",
+      "tags": ["Molecular Gastronomy", "Street Food", "Accessible Luxury", "Food Innovation"],
+      "impact": "Low",
+      "difficulty": "High"
+    },
+    {
+      "id": 39,
+      "category": "🚗 Transportation",
+      "title": "Autonomous Grocery Delivery Pods",
+      "description": "Self-driving refrigerated pods that travel predetermined routes, allowing customers to order groceries for pickup at scheduled stops.",
+      "tags": ["Autonomous Vehicles", "Grocery Delivery", "Scheduled Pickup", "Route Optimization"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 40,
+      "category": "🎓 Education Ideas",
+      "title": "Failure Celebration Workshops",
+      "description": "Educational programs that teach resilience by celebrating and learning from failures, changing cultural attitudes toward setbacks.",
+      "tags": ["Resilience Training", "Growth Mindset", "Emotional Intelligence", "Cultural Change"],
+      "impact": "High",
+      "difficulty": "Low"
+    },
+    {
+      "id": 41,
+      "category": "🏥 Health & Wellness",
+      "title": "Circadian Rhythm Optimization",
+      "description": "Personalized lighting and supplement protocols that optimize circadian rhythms for shift workers and frequent travelers.",
+      "tags": ["Circadian Health", "Shift Work", "Travel Wellness", "Personalized Medicine"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 42,
+      "category": "🌍 Social Impact",
+      "title": "Intergenerational Housing Co-ops",
+      "description": "Housing communities designed to connect young professionals with seniors, exchanging tech help and companionship for reduced rent.",
+      "tags": ["Intergenerational Living", "Affordable Housing", "Community Building", "Social Innovation"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 43,
+      "category": "💼 Business Ideas",
+      "title": "Digital Detox Retreats",
+      "description": "Technology-free retreat centers offering structured programs to help people develop healthier relationships with digital devices.",
+      "tags": ["Digital Wellness", "Retreat", "Mental Health", "Technology Balance"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 44,
+      "category": "🚀 Tech Ideas",
+      "title": "Emotion Recognition Security",
+      "description": "Security system that uses facial emotion recognition to detect stress or deception, enhancing traditional surveillance methods.",
+      "tags": ["Emotion AI", "Security Tech", "Behavioral Analysis", "Privacy Considerations"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 45,
+      "category": "🎮 Entertainment",
+      "title": "Dream Recording Technology",
+      "description": "Device that captures and visualizes dreams using brain activity monitoring, allowing people to review and share their dream experiences.",
+      "tags": ["Dream Research", "Neurotechnology", "Consciousness", "Data Visualization"],
+      "impact": "Low",
+      "difficulty": "High"
+    },
+    {
+      "id": 46,
+      "category": "🌱 Sustainability",
+      "title": "Vertical Farm Restaurants",
+      "description": "Restaurants that grow their ingredients in vertical farms within the dining space, showing the complete farm-to-table process.",
+      "tags": ["Vertical Farming", "Farm-to-Table", "Transparent Food Production", "Urban Agriculture"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 47,
+      "category": "🏠 Home & Living",
+      "title": "Adaptive Furniture AI",
+      "description": "Furniture that automatically adjusts to optimize comfort and health based on user behavior patterns and biometric data.",
+      "tags": ["Smart Furniture", "Ergonomics", "Health Monitoring", "Adaptive Design"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 48,
+      "category": "🎨 Art Ideas",
+      "title": "Biodegradable Art Installations",
+      "description": "Temporary art pieces made from biodegradable materials that naturally transform and disappear over time, representing life cycles.",
+      "tags": ["Eco Art", "Temporal Art", "Biodegradable Materials", "Environmental Message"],
+      "impact": "Low",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 49,
+      "category": "🍔 Food & Dining",
+      "title": "Personalized Nutrition Cafés",
+      "description": "Cafés that create custom meals based on individual DNA analysis, microbiome testing, and real-time health monitoring.",
+      "tags": ["Personalized Nutrition", "Genetic Testing", "Health Tech", "Custom Food"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 50,
+      "category": "🚗 Transportation",
+      "title": "Solar-Powered Bus Stops",
+      "description": "Bus stops with integrated solar panels that provide device charging, WiFi, and real-time transit information while generating clean energy.",
+      "tags": ["Solar Energy", "Public Transit", "Smart Infrastructure", "Renewable Energy"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 51,
+      "category": "🎓 Education Ideas",
+      "title": "Empathy Training VR",
+      "description": "Virtual reality experiences that let people experience life from different perspectives to build empathy and understanding across cultures.",
+      "tags": ["VR", "Empathy Building", "Cultural Understanding", "Social Learning"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 52,
+      "category": "🏥 Health & Wellness",
+      "title": "Microbiome-Based Skincare",
+      "description": "Personalized skincare products created based on individual skin microbiome analysis to optimize skin health naturally.",
+      "tags": ["Microbiome", "Personalized Skincare", "Natural Health", "Biotechnology"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 53,
+      "category": "🌍 Social Impact",
+      "title": "Refugee Skill Integration Network",
+      "description": "Platform connecting refugees with employers, providing skill validation, language training, and cultural integration support.",
+      "tags": ["Refugee Support", "Skill Validation", "Integration", "Social Justice"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 54,
+      "category": "💼 Business Ideas",
+      "title": "Virtual Reality Meeting Rooms",
+      "description": "VR spaces designed for remote collaboration with spatial audio, haptic feedback, and realistic environment simulation.",
+      "tags": ["VR Collaboration", "Remote Work", "Virtual Meetings", "Spatial Computing"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 55,
+      "category": "🚀 Tech Ideas",
+      "title": "Blockchain Identity Verification",
+      "description": "Decentralized identity system that gives users control over their personal data while providing secure verification for services.",
+      "tags": ["Blockchain", "Digital Identity", "Privacy", "Decentralization"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 56,
+      "category": "🎮 Entertainment",
+      "title": "Collaborative Music Creation App",
+      "description": "App that allows musicians worldwide to collaborate on songs in real-time, with AI helping to harmonize different musical styles.",
+      "tags": ["Music Collaboration", "AI Music", "Global Collaboration", "Creative Tools"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 57,
+      "category": "🌱 Sustainability",
+      "title": "Ocean Plastic Fashion Line",
+      "description": "Fashion brand that creates stylish clothing from ocean plastic waste, combining environmental cleanup with trendy apparel.",
+      "tags": ["Ocean Cleanup", "Sustainable Fashion", "Recycled Materials", "Environmental Fashion"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 58,
+      "category": "🏠 Home & Living",
+      "title": "Holographic Interior Design",
+      "description": "Service that uses holographic projections to let customers visualize furniture and décor changes before making purchases.",
+      "tags": ["Holographic Design", "Interior Visualization", "AR/VR", "Home Design"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 59,
+      "category": "🎨 Art Ideas",
+      "title": "Weather-Responsive Sculptures",
+      "description": "Outdoor sculptures that change form, color, or movement based on weather conditions, creating ever-changing public art.",
+      "tags": ["Weather Art", "Responsive Sculpture", "Public Art", "Environmental Interaction"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 60,
+      "category": "🍔 Food & Dining",
+      "title": "Insect Protein Gourmet Restaurant",
+      "description": "High-end restaurant specializing in delicious insect-based cuisine, normalizing sustainable protein sources through fine dining.",
+      "tags": ["Insect Protein", "Sustainable Dining", "Alternative Protein", "Food Innovation"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 61,
+      "category": "🚗 Transportation",
+      "title": "Flying Taxi Landing Pads",
+      "description": "Infrastructure network of standardized landing pads for future flying vehicles integrated into urban planning.",
+      "tags": ["Flying Vehicles", "Urban Infrastructure", "Future Transportation", "City Planning"],
+      "impact": "Low",
+      "difficulty": "High"
+    },
+    {
+      "id": 62,
+      "category": "🎓 Education Ideas",
+      "title": "Gamified Financial Literacy",
+      "description": "Mobile game that teaches financial literacy through real-world simulations and rewards responsible financial behavior.",
+      "tags": ["Financial Education", "Gamification", "Mobile Learning", "Personal Finance"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 63,
+      "category": "🏥 Health & Wellness",
+      "title": "Loneliness Detection App",
+      "description": "App that monitors communication patterns and social interactions to detect loneliness and suggest meaningful social activities.",
+      "tags": ["Mental Health", "Social Wellness", "Loneliness Prevention", "Community Connection"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 64,
+      "category": "🌍 Social Impact",
+      "title": "Time Bank Community Network",
+      "description": "System where people earn time credits by helping others, which they can spend to receive help with their own needs.",
+      "tags": ["Time Banking", "Community Support", "Alternative Currency", "Mutual Aid"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 65,
+      "category": "💼 Business Ideas",
+      "title": "AI Personal Brand Manager",
+      "description": "AI service that manages personal online presence, optimizes social media content, and builds professional reputation automatically.",
+      "tags": ["Personal Branding", "AI Marketing", "Social Media", "Reputation Management"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 66,
+      "category": "🚀 Tech Ideas",
+      "title": "Quantum Computing Cloud Service",
+      "description": "Cloud platform that makes quantum computing accessible to researchers and businesses without requiring quantum hardware.",
+      "tags": ["Quantum Computing", "Cloud Services", "Research Tools", "Emerging Technology"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 67,
+      "category": "🎮 Entertainment",
+      "title": "Historical Figure AI Conversations",
+      "description": "AI chatbots trained on historical figures allowing people to have conversations with Einstein, da Vinci, or Shakespeare.",
+      "tags": ["AI Chatbots", "Historical Education", "Interactive Learning", "Personality AI"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 68,
+      "category": "🌱 Sustainability",
+      "title": "Carbon Credit Gaming Platform",
+      "description": "Game that rewards players for real-world sustainable actions with carbon credits that have actual environmental impact.",
+      "tags": ["Carbon Credits", "Environmental Gaming", "Behavioral Change", "Sustainability Rewards"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 69,
+      "category": "🏠 Home & Living",
+      "title": "Sound-Absorbing Living Walls",
+      "description": "Living plant walls engineered to absorb sound pollution while purifying air and creating biophilic indoor environments.",
+      "tags": ["Biophilic Design", "Sound Management", "Air Purification", "Living Architecture"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 70,
+      "category": "🎨 Art Ideas",
+      "title": "Collective Memory Art Project",
+      "description": "Interactive installation where visitors share memories that are transformed into visual art, creating collective storytelling.",
+      "tags": ["Collective Memory", "Interactive Art", "Storytelling", "Community Art"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 71,
+      "category": "🍔 Food & Dining",
+      "title": "3D Printed Personalized Vitamins",
+      "description": "Service that 3D prints personalized vitamin supplements based on individual health data and nutritional needs.",
+      "tags": ["3D Printing", "Personalized Nutrition", "Health Supplements", "Custom Manufacturing"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 72,
+      "category": "🚗 Transportation",
+      "title": "Magnetic Levitation Personal Pods",
+      "description": "Personal transportation pods using magnetic levitation technology for smooth, quiet, and energy-efficient urban travel.",
+      "tags": ["Magnetic Levitation", "Personal Transportation", "Urban Mobility", "Clean Technology"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 73,
+      "category": "🎓 Education Ideas",
+      "title": "AI Debate Partner Platform",
+      "description": "AI system that engages in debates on any topic, helping students develop critical thinking and argumentation skills.",
+      "tags": ["AI Education", "Critical Thinking", "Debate Skills", "Argumentation"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 74,
+      "category": "🏥 Health & Wellness",
+      "title": "Stress-Responsive Clothing",
+      "description": "Smart textiles that monitor stress levels and respond with cooling, compression, or aromatherapy to promote wellness.",
+      "tags": ["Smart Textiles", "Stress Management", "Wearable Health", "Responsive Materials"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 75,
+      "category": "🌍 Social Impact",
+      "title": "Digital Literacy Grandparent Program",
+      "description": "Intergenerational program where tech-savvy youth teach digital skills to seniors in exchange for life experience stories.",
+      "tags": ["Digital Literacy", "Intergenerational Learning", "Senior Support", "Community Program"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 76,
+      "category": "💼 Business Ideas",
+      "title": "Micro-Habit Coaching Service",
+      "description": "Personalized coaching service that helps people build lasting behavioral changes through tiny, scientifically-backed daily habits.",
+      "tags": ["Habit Formation", "Behavioral Science", "Personal Coaching", "Micro-habits"],
+      "impact": "High",
+      "difficulty": "Low"
+    },
+    {
+      "id": 77,
+      "category": "🚀 Tech Ideas",
+      "title": "Brain-Computer Interface Productivity",
+      "description": "Non-invasive brain-computer interface that enhances productivity by detecting mental state and optimizing work environment.",
+      "tags": ["Brain-Computer Interface", "Productivity Enhancement", "Neurotechnology", "Cognitive Optimization"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 78,
+      "category": "🎮 Entertainment",
+      "title": "Emotion-Based Music Streaming",
+      "description": "Music streaming service that uses biometric data to automatically play music that matches or improves your emotional state.",
+      "tags": ["Emotion Detection", "Music Streaming", "Biometric Data", "Mood Enhancement"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 79,
+      "category": "🌱 Sustainability",
+      "title": "Algae-Based Building Materials",
+      "description": "Construction materials made from fast-growing algae that absorb CO2 during production, creating carbon-negative buildings.",
+      "tags": ["Algae Technology", "Carbon-Negative", "Sustainable Construction", "Biobuilding"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 80,
+      "category": "🏠 Home & Living",
+      "title": "Gravity-Fed Vertical Gardens",
+      "description": "Self-watering vertical garden systems that use gravity and recycled water to grow food in small urban spaces.",
+      "tags": ["Vertical Gardening", "Water Conservation", "Urban Farming", "Sustainable Living"],
+      "impact": "Medium",
+      "difficulty": "Low"
+    },
+    {
+      "id": 81,
+      "category": "🎨 Art Ideas",
+      "title": "Augmented Reality Street Art",
+      "description": "Street art that comes alive through AR apps, adding dynamic layers and interactive elements to static murals.",
+      "tags": ["Augmented Reality", "Street Art", "Interactive Art", "Digital Enhancement"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 82,
+      "category": "🍔 Food & Dining",
+      "title": "Fermentation Café Network",
+      "description": "Cafés specializing in fermented foods and drinks with live fermentation displays and educational workshops.",
+      "tags": ["Fermentation", "Probiotics", "Food Education", "Health Food"],
+      "impact": "Low",
+      "difficulty": "Low"
+    },
+    {
+      "id": 83,
+      "category": "🚗 Transportation",
+      "title": "Emergency Vehicle Priority System",
+      "description": "Smart traffic system that automatically creates clear paths for emergency vehicles using connected car technology.",
+      "tags": ["Emergency Response", "Smart Traffic", "Connected Vehicles", "Public Safety"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 84,
+      "category": "🎓 Education Ideas",
+      "title": "Cultural Exchange Home Stays",
+      "description": "Platform matching families worldwide for cultural exchange home stays with built-in language learning and cultural activities.",
+      "tags": ["Cultural Exchange", "Language Learning", "Global Education", "Family Travel"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 85,
+      "category": "🏥 Health & Wellness",
+      "title": "Precision Sleep Coaching",
+      "description": "Personalized sleep optimization service using sleep tracking, genetic analysis, and environmental controls for perfect rest.",
+      "tags": ["Sleep Optimization", "Precision Medicine", "Sleep Tracking", "Personalized Health"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 86,
+      "category": "🌍 Social Impact",
+      "title": "Disaster Response Coordination App",
+      "description": "App that coordinates volunteers, resources, and aid during natural disasters using real-time data and AI matching.",
+      "tags": ["Disaster Response", "Volunteer Coordination", "Emergency Management", "Social Good"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 87,
+      "category": "💼 Business Ideas",
+      "title": "Virtual Reality Therapy Clinics",
+      "description": "VR-based therapy for phobias, PTSD, and anxiety disorders using controlled virtual environments for exposure therapy.",
+      "tags": ["VR Therapy", "Mental Health", "Exposure Therapy", "Digital Health"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 88,
+      "category": "🚀 Tech Ideas",
+      "title": "Holographic Data Visualization",
+      "description": "3D holographic displays for complex data visualization allowing researchers to manipulate data in three-dimensional space.",
+      "tags": ["Holographic Display", "Data Visualization", "3D Interaction", "Research Tools"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 89,
+      "category": "🎮 Entertainment",
+      "title": "Scent-Enhanced Movie Theaters",
+      "description": "Movie theaters with synchronized scent release systems that add olfactory dimensions to films for immersive experiences.",
+      "tags": ["Sensory Entertainment", "Scent Technology", "Immersive Cinema", "Multi-sensory"],
+      "impact": "Low",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 90,
+      "category": "🌱 Sustainability",
+      "title": "Atmospheric Water Generators",
+      "description": "Devices that extract pure drinking water from atmospheric humidity, providing clean water in arid regions.",
+      "tags": ["Water Generation", "Atmospheric Water", "Clean Water", "Drought Solutions"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 91,
+      "category": "🏠 Home & Living",
+      "title": "Shape-Shifting Furniture",
+      "description": "Furniture that automatically reconfigures based on daily routines and space needs using smart materials and actuators.",
+      "tags": ["Smart Materials", "Adaptive Furniture", "Space Optimization", "Automated Living"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 92,
+      "category": "🎨 Art Ideas",
+      "title": "AI-Human Collaborative Paintings",
+      "description": "Art studio where AI and human artists collaborate in real-time, creating unique pieces that blend artificial and human creativity.",
+      "tags": ["AI Art", "Human-AI Collaboration", "Creative Partnership", "Hybrid Art"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 93,
+      "category": "🍔 Food & Dining",
+      "title": "Zero-Waste Pop-up Restaurants",
+      "description": "Temporary restaurants that operate with zero waste, using only local ingredients and compostable materials.",
+      "tags": ["Zero Waste", "Pop-up Dining", "Sustainable Restaurant", "Local Sourcing"],
+      "impact": "Medium",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 94,
+      "category": "🚗 Transportation",
+      "title": "Underground Pneumatic Transport",
+      "description": "Underground pneumatic tube system for rapid cargo and package delivery within cities, reducing surface traffic.",
+      "tags": ["Pneumatic Transport", "Underground Logistics", "Cargo Delivery", "Urban Infrastructure"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 95,
+      "category": "🎓 Education Ideas",
+      "title": "Mistake-Learning AI Tutor",
+      "description": "AI tutor that learns from student mistakes to provide personalized learning paths and prevent common errors.",
+      "tags": ["AI Tutoring", "Personalized Learning", "Error Analysis", "Adaptive Education"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 96,
+      "category": "🏥 Health & Wellness",
+      "title": "Genetic Fitness Optimization",
+      "description": "Fitness programs tailored to individual genetic profiles, optimizing exercise routines for maximum health benefits.",
+      "tags": ["Genetic Testing", "Personalized Fitness", "Precision Health", "Genetic Optimization"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 97,
+      "category": "🌍 Social Impact",
+      "title": "Prisoner Rehabilitation Tech Program",
+      "description": "Technology training program for prisoners that provides job-ready skills and connections to employment upon release.",
+      "tags": ["Prison Reform", "Rehabilitation", "Tech Training", "Reentry Support"],
+      "impact": "High",
+      "difficulty": "Medium"
+    },
+    {
+      "id": 98,
+      "category": "💼 Business Ideas",
+      "title": "Transparent Supply Chain Platform",
+      "description": "Blockchain-based platform that tracks products from origin to consumer, ensuring ethical sourcing and transparency.",
+      "tags": ["Supply Chain", "Transparency", "Ethical Sourcing", "Blockchain"],
+      "impact": "High",
+      "difficulty": "High"
+    },
+    {
+      "id": 99,
+      "category": "🚀 Tech Ideas",
+      "title": "Swarm Robotics Cleaning Service",
+      "description": "Coordinated robots that work together to clean large spaces efficiently, learning and adapting to environment changes.",
+      "tags": ["Swarm Robotics", "Cleaning Technology", "Automation", "Coordinated AI"],
+      "impact": "Medium",
+      "difficulty": "High"
+    },
+    {
+      "id": 100,
+      "category": "🎮 Entertainment",
+      "title": "Memory Palace Gaming",
+      "description": "Games designed to help players build memory palaces for improved memory retention using gamified learning techniques.",
+      "tags": ["Memory Enhancement", "Cognitive Training", "Educational Gaming", "Memory Palace"],
+      "impact": "Medium",
+      "difficulty": "Medium"
     }
   ]
 } 

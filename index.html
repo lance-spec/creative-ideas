@@ -375,20 +375,29 @@
     </div>
 
     <script>
-        // API Configuration - 自动检测当前访问地址
-        const API_BASE_URL = `${window.location.protocol}//${window.location.hostname}:${window.location.port || 3001}`;
+        // API Configuration - 检测环境
+        const isLocalDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.includes('192.168');
+        const API_BASE_URL = isLocalDevelopment ? 
+            `${window.location.protocol}//${window.location.hostname}:3001` : 
+            window.location.origin;
         
         // Analytics tracking function
         async function trackEvent(eventType) {
             try {
-                await fetch(`${API_BASE_URL}/api/track`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ eventType })
-                });
-                console.log(`📊 Tracked event: ${eventType}`);
+                // Only track events if in local development with API
+                if (isLocalDevelopment) {
+                    await fetch(`${API_BASE_URL}/api/track`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ eventType })
+                    });
+                    console.log(`📊 Tracked event: ${eventType}`);
+                } else {
+                    // For production, just log events locally
+                    console.log(`📊 Event: ${eventType} (production mode)`);
+                }
             } catch (error) {
                 console.log('Analytics tracking failed:', error);
             }
@@ -417,24 +426,36 @@
         // Check API status
         async function checkAPIStatus() {
             try {
-                const response = await fetch(`${API_BASE_URL}/api/health`);
-                if (response.ok) {
-                    const data = await response.json();
-                    // Hide status indicator when connected successfully
+                // Only check API health if in local development
+                if (isLocalDevelopment) {
+                    const response = await fetch(`${API_BASE_URL}/api/health`);
+                    if (response.ok) {
+                        document.getElementById('api-status').style.display = 'none';
+                        getIdeaBtn.disabled = false;
+                        getIdeaBtn.style.opacity = '1';
+                        return;
+                    }
+                }
+                
+                // For Vercel/production, just hide API status and enable button
+                document.getElementById('api-status').style.display = 'none';
+                getIdeaBtn.disabled = false;
+                getIdeaBtn.style.opacity = '1';
+                
+            } catch (error) {
+                // In production, don't show API errors, just work with local data
+                if (isLocalDevelopment) {
+                    document.getElementById('api-status').style.display = 'block';
+                    statusIndicator.className = 'inline-block w-3 h-3 bg-red-400 rounded-full mr-2';
+                    statusText.textContent = 'Service temporarily unavailable 🔧';
+                    getIdeaBtn.disabled = true;
+                    getIdeaBtn.style.opacity = '0.5';
+                } else {
+                    // Hide status and enable functionality for production
                     document.getElementById('api-status').style.display = 'none';
-                    // Ensure button is enabled
                     getIdeaBtn.disabled = false;
                     getIdeaBtn.style.opacity = '1';
-                } else {
-                    throw new Error('API not responding');
                 }
-            } catch (error) {
-                // Show error status only when there's a problem
-                document.getElementById('api-status').style.display = 'block';
-                statusIndicator.className = 'inline-block w-3 h-3 bg-red-400 rounded-full mr-2';
-                statusText.textContent = 'Service temporarily unavailable 🔧';
-                getIdeaBtn.disabled = true;
-                getIdeaBtn.style.opacity = '0.5';
             }
         }
 
@@ -479,19 +500,31 @@
             }, 5000);
         }
 
-        // Get random idea from API
+        // Get random idea from API or local JSON
         async function fetchRandomIdea() {
             try {
-                const response = await fetch(`${API_BASE_URL}/api/random-idea`);
+                // Try API first (for local development)
+                if (isLocalDevelopment) {
+                    const response = await fetch(`${API_BASE_URL}/api/random-idea`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.success) {
+                            return data.idea;
+                        }
+                    }
+                }
+                
+                // Fallback to local JSON file (for Vercel deployment)
+                const response = await fetch('./creative-ideas.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                if (data.success) {
-                    return data.idea;
-                } else {
-                    throw new Error(data.error || 'Unknown error');
-                }
+                
+                // Get random idea from the JSON data
+                const randomIndex = Math.floor(Math.random() * data.ideas.length);
+                return data.ideas[randomIndex];
+                
             } catch (error) {
                 console.error('Failed to fetch idea:', error);
                 throw error;
@@ -748,8 +781,10 @@
             actionButtons.classList.remove('hidden');
         });
 
-        // Refresh API status every 30 seconds
-        setInterval(checkAPIStatus, 30000);
+        // Refresh API status every 30 seconds (only in local development)
+        if (isLocalDevelopment) {
+            setInterval(checkAPIStatus, 30000);
+        }
     </script>
 </body>
 </html>

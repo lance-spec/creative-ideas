@@ -487,12 +487,12 @@
 
         // Show error message
         function showError(message) {
-            errorContainer.innerHTML = `
-                <div class="error-message">
-                    <strong>⚠️ Error:</strong> ${message}
-                    <br><small>Please make sure the backend server is running on port 3001</small>
-                </div>
-            `;
+            // Different error messages for different environments
+            const errorMessage = isLocalDevelopment ? 
+                `<strong>⚠️ Error:</strong> ${message}<br><small>Please make sure the backend server is running on port 3001</small>` :
+                `<strong>⚠️ Error:</strong> ${message}<br><small>Please refresh the page and try again</small>`;
+                
+            errorContainer.innerHTML = `<div class="error-message">${errorMessage}</div>`;
             errorContainer.classList.remove('hidden');
             
             setTimeout(() => {
@@ -502,28 +502,38 @@
 
         // Get random idea from API or local JSON
         async function fetchRandomIdea() {
+            console.log('fetchRandomIdea called, isLocalDevelopment:', isLocalDevelopment);
+            
             try {
                 // Try API first (for local development)
                 if (isLocalDevelopment) {
+                    console.log('Trying API:', `${API_BASE_URL}/api/random-idea`);
                     const response = await fetch(`${API_BASE_URL}/api/random-idea`);
                     if (response.ok) {
                         const data = await response.json();
                         if (data.success) {
+                            console.log('API success, returning idea:', data.idea.title);
                             return data.idea;
                         }
                     }
+                    console.log('API failed, falling back to JSON');
                 }
                 
                 // Fallback to local JSON file (for Vercel deployment)
+                console.log('Loading from JSON file...');
                 const response = await fetch('./creative-ideas.json');
+                console.log('JSON fetch response status:', response.status);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
+                console.log('JSON loaded successfully, ideas count:', data.ideas.length);
                 
                 // Get random idea from the JSON data
                 const randomIndex = Math.floor(Math.random() * data.ideas.length);
-                return data.ideas[randomIndex];
+                const selectedIdea = data.ideas[randomIndex];
+                console.log('Selected idea:', selectedIdea.title);
+                return selectedIdea;
                 
             } catch (error) {
                 console.error('Failed to fetch idea:', error);
@@ -613,8 +623,12 @@
             } catch (error) {
                 clearInterval(textInterval);
                 
-                // Handle error
-                showError('Failed to fetch creative idea. Please check your internet connection and try again.');
+                // Handle error with different messages for different environments
+                const errorMessage = isLocalDevelopment ? 
+                    'Failed to fetch creative idea. Please check your internet connection and try again.' :
+                    'Unable to load creative ideas. Please refresh the page.';
+                    
+                showError(errorMessage);
                 
                 // Reset button
                 getIdeaBtn.innerHTML = '🧠 Get Creative Inspiration';

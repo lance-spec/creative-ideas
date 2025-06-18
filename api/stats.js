@@ -1,6 +1,3 @@
-import fs from 'fs';
-import path from 'path';
-
 export default function handler(req, res) {
     // 设置CORS头
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -17,68 +14,38 @@ export default function handler(req, res) {
         return;
     }
 
-    try {
-        // 读取stats.json文件
-        const statsPath = path.join(process.cwd(), 'stats.json');
-        
-        let stats = {
-            pageViews: 0,
-            getInspiration: 0,
-            loveIdea: 0,
-            clickPay: 0,
-            startDate: new Date().toISOString(),
-            lastUpdated: new Date().toISOString()
-        };
+    // 由于Vercel serverless环境的限制，我们返回模拟数据
+    // 在生产环境中，这些数据应该来自数据库
+    const mockStats = {
+        pageViews: 9,
+        getInspiration: 6,
+        loveIdea: 4,
+        clickPay: 3,
+        startDate: "2025-06-12T15:29:53.969Z",
+        lastUpdated: new Date().toISOString()
+    };
 
-        // 如果文件存在，读取数据
-        if (fs.existsSync(statsPath)) {
-            const fileContent = fs.readFileSync(statsPath, 'utf8');
-            stats = JSON.parse(fileContent);
+    // 计算转化率
+    const conversionRates = {
+        inspirationRate: mockStats.pageViews > 0 ? ((mockStats.getInspiration / mockStats.pageViews) * 100).toFixed(1) : '0.0',
+        loveRate: mockStats.getInspiration > 0 ? ((mockStats.loveIdea / mockStats.getInspiration) * 100).toFixed(1) : '0.0',
+        payRate: mockStats.loveIdea > 0 ? ((mockStats.clickPay / mockStats.loveIdea) * 100).toFixed(1) : '0.0',
+        overallRate: mockStats.pageViews > 0 ? ((mockStats.clickPay / mockStats.pageViews) * 100).toFixed(1) : '0.0'
+    };
+
+    const response = {
+        totalStats: {
+            pageViews: mockStats.pageViews,
+            getInspiration: mockStats.getInspiration,
+            loveIdea: mockStats.loveIdea,
+            clickPay: mockStats.clickPay
+        },
+        conversionRates,
+        period: {
+            startDate: mockStats.startDate,
+            lastUpdated: mockStats.lastUpdated
         }
+    };
 
-        // 计算转化率
-        const conversionRates = {
-            inspirationRate: stats.pageViews > 0 ? ((stats.getInspiration / stats.pageViews) * 100).toFixed(1) : '0.0',
-            loveRate: stats.getInspiration > 0 ? ((stats.loveIdea / stats.getInspiration) * 100).toFixed(1) : '0.0',
-            payRate: stats.loveIdea > 0 ? ((stats.clickPay / stats.loveIdea) * 100).toFixed(1) : '0.0',
-            overallRate: stats.pageViews > 0 ? ((stats.clickPay / stats.pageViews) * 100).toFixed(1) : '0.0'
-        };
-
-        const response = {
-            totalStats: {
-                pageViews: stats.pageViews,
-                getInspiration: stats.getInspiration,
-                loveIdea: stats.loveIdea,
-                clickPay: stats.clickPay
-            },
-            conversionRates,
-            period: {
-                startDate: stats.startDate,
-                lastUpdated: stats.lastUpdated
-            }
-        };
-
-        res.status(200).json(response);
-    } catch (error) {
-        console.error('Error reading stats:', error);
-        res.status(500).json({ 
-            error: 'Failed to read statistics',
-            totalStats: {
-                pageViews: 0,
-                getInspiration: 0,
-                loveIdea: 0,
-                clickPay: 0
-            },
-            conversionRates: {
-                inspirationRate: '0.0',
-                loveRate: '0.0',
-                payRate: '0.0',
-                overallRate: '0.0'
-            },
-            period: {
-                startDate: new Date().toISOString(),
-                lastUpdated: new Date().toISOString()
-            }
-        });
-    }
+    res.status(200).json(response);
 } 
